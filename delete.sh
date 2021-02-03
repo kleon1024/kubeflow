@@ -1,0 +1,11 @@
+kubectl delete namespace cert-manager
+sleep 10
+(
+NAMESPACE=cert-manager
+kubectl proxy &
+kubectl get namespace $NAMESPACE -o json |jq '.spec = {"finalizers":[]}' > temp.json
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @temp.json 127.0.0.1:8001/api/v1/namespaces/$NAMESPACE/finalize
+pkill kubectl
+rm -rf temp.json
+)
+kfctl delete -V -f kfctl_k8s_istio.yaml
