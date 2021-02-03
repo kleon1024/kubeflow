@@ -27,7 +27,7 @@ data:
     }
   logger: |-
     {
-        "image" : "gcr.io/kfserving/logger:v0.3.0",
+        "image" : "registry.cn-shanghai.aliyuncs.com/pai_product/k8s:gcr.io-kfserving-logger-v0.3.0",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
@@ -36,18 +36,18 @@ data:
   predictors: |-
     {
         "tensorflow": {
-            "image": "tensorflow/serving",
-            "defaultImageVersion": "1.14.0",
-            "defaultGpuImageVersion": "1.14.0-gpu",
+            "image": "registry.cn-shanghai.aliyuncs.com/pai_product/k8s",
+            "defaultImageVersion": "tensorflow-serving-1.14.0",
+            "defaultGpuImageVersion": "tensorflow-serving-1.14.0-gpu",
             "allowedImageVersions": [
-               "1.11.0",
-               "1.11.0-gpu",
-               "1.12.0",
-               "1.12.0-gpu",
-               "1.13.0",
-               "1.13.0-gpu",
-               "1.14.0",
-               "1.14.0-gpu"
+               "tensorflow-serving-1.11.0",
+               "tensorflow-serving-1.11.0-gpu",
+               "tensorflow-serving-1.12.0",
+               "tensorflow-serving-1.12.0-gpu",
+               "tensorflow-serving-1.13.0",
+               "tensorflow-serving-1.13.0-gpu",
+               "tensorflow-serving-1.14.0",
+               "tensorflow-serving-1.14.0-gpu"
             ]
         },
         "onnx": {
@@ -58,39 +58,39 @@ data:
             ]
         },
         "sklearn": {
-            "image": "gcr.io/kfserving/sklearnserver",
-            "defaultImageVersion": "v0.3.0",
+            "image": "registry.cn-shanghai.aliyuncs.com/pai_product/k8s",
+            "defaultImageVersion": "gcr.io-kfserving-sklearnserver-v0.3.0",
             "allowedImageVersions": [
-               "v0.3.0"
+               "gcr.io-kfserving-sklearnserver-v0.3.0"
             ]
         },
         "xgboost": {
-            "image": "gcr.io/kfserving/xgbserver",
-            "defaultImageVersion": "v0.3.0",
+            "image": "registry.cn-shanghai.aliyuncs.com/pai_product/k8s",
+            "defaultImageVersion": "gcr.io-kfserving-xgbserver-v0.3.0",
             "allowedImageVersions": [
-               "v0.3.0"
+               "gcr.io-kfserving-xgbserver-v0.3.0"
             ]
         },
         "pytorch": {
-            "image": "gcr.io/kfserving/pytorchserver",
-            "defaultImageVersion": "v0.3.0",
-            "defaultGpuImageVersion": "v0.3.0-gpu",
+            "image": "registry.cn-shanghai.aliyuncs.com/pai_product/k8s",
+            "defaultImageVersion": "gcr.io-kfserving-pytorchserver-v0.3.0",
+            "defaultGpuImageVersion": "gcr.io-kfserving-pytorchserver-v0.3.0-gpu",
             "allowedImageVersions": [
-               "v0.3.0",
-               "v0.3.0-gpu"
+               "gcr.io-kfserving-pytorchserver-v0.3.0",
+               "gcr.io-kfserving-pytorchserver-v0.3.0-gpu"
             ]
         },
         "tensorrt": {
-            "image": "nvcr.io/nvidia/tensorrtserver",
-            "defaultImageVersion": "19.05-py3",
+            "image": "registry.cn-shanghai.aliyuncs.com/pai_product/k8s",
+            "defaultImageVersion": "1nvcr.io-nvidia-tensorrtserver-9.05-py3",
             "allowedImageVersions": [
-               "19.05-py3"
+               "nvcr.io-nvidia-tensorrtserver-19.05-py3"
             ]
         }
     }
   storageInitializer: |-
     {
-        "image" : "gcr.io/kfserving/storage-initializer:v0.3.0",
+        "image" : "registry.cn-shanghai.aliyuncs.com/pai_product/k8s:gcr.io-kfserving-storage-initializer-v0.3.0",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
